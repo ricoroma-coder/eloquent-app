@@ -2,11 +2,13 @@
 
 namespace Controllers;
 
+use Models\Question;
+
 class Questions {
 
-    public static function create_user($question, $user_id) {
+    public static function create_question($question, $user_id) {
         $qtn = Question::create([
-            'question '=> $question,
+            'question'=> $question,
             'user_id' => $user_id
         ]);
         return $qtn;

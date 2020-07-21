@@ -8,7 +8,7 @@ class Users {
 
     public static function create_user($username, $email, $password) {
         $user = User::create([
-            'username '=> $username,
+            'username' => $username,
             'email' => $email,
             'password' => $password
         ]);
