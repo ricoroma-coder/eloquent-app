@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Models\User;
+use Models\Question;
 
 class Users {
 
@@ -13,6 +14,12 @@ class Users {
             'password' => $password
         ]);
         return $user;
+    }
+
+    // Questions count
+    public static function question_count($user_id) {
+        $count = Question::where('user_id',$user_id)->count();
+        return $count;
     }
 
 }

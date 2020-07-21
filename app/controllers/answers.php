@@ -15,4 +15,11 @@ class Answers {
         $upvote = UpVote::create(['answer_id'=>$answer_id,'user_id'=>$user_id]);
         return $upvote;
     }
+
+    public static function update_answer($answer_id,$new_answer){
+        $answer = Answer::find($answer_id);
+        $answer->answer = $new_answer;
+        $updated = $answer->save();
+        return $updated;
+    }
 }

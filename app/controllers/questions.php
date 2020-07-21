@@ -19,4 +19,21 @@ class Questions {
         return $questions;
     }
 
+    public static function get_questions_with_users() {
+        $questions = Question::with('user')->get()->toArray();
+        return $questions; 
+    }
+
+    public static function get_question_answers_upvotes($question_id) { 
+        $questions = Question::find($question_id)->answers()->with('upvotes')->get()->toArray();
+        return $questions;
+    }
+
+    public static function delete_question($question_id){
+        $question = Question::find($question_id);
+        var_dump($question);
+        // $deleted = $question->delete();
+        // return $deleted;
+    }
+
 }
